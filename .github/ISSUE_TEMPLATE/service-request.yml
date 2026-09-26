@@ -1,0 +1,57 @@
+name: 科研服务需求
+description: 提交统计分析、科研绘图、代码复现或系统综述数据整理需求
+title: "[需求] "
+labels:
+  - 需求
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请勿在这里上传患者数据、未发表数据、个人信息或任何敏感材料。请先提交需求摘要，确认合作后再通过安全渠道传输数据。
+  - type: dropdown
+    id: service
+    attributes:
+      label: 服务类型
+      options:
+        - 单图诊断与优化
+        - 标准统计分析
+        - 复杂分析套餐
+        - 系统综述数据整理
+        - 一对一科研工具辅导
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: 研究问题
+      description: 请用几句话说明研究目的和主要结局
+    validations:
+      required: true
+  - type: input
+    id: data
+    attributes:
+      label: 数据格式与样本量
+      placeholder: Excel，200例，30个变量
+    validations:
+      required: true
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: 期望交付物
+      description: 说明需要的统计方法、图表数量、代码或结果说明
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: 期望完成时间
+    validations:
+      required: true
+  - type: input
+    id: budget
+    attributes:
+      label: 预算范围
+      placeholder: 1000～2000元
+    validations:
+      required: false

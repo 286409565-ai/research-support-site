@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="科研数据分析和绘图服务报价估算工具">
+  <title>科研服务报价估算</title>
+  <link rel="stylesheet" href="quote-styles.css">
+</head>
+<body>
+  <main class="quote-shell">
+    <section class="intro">
+      <p class="eyebrow">项目估算</p>
+      <h1>科研服务报价<br><span>先估算，再确认范围</span></h1>
+      <p>这个工具用于初步判断预算。最终报价取决于数据质量、分析难度、交付时间和修改范围。</p>
+      <ul>
+        <li>报价为不含税参考区间</li>
+        <li>复杂统计需结合研究设计评估</li>
+        <li>新增需求不属于原修改范围</li>
+      </ul>
+      <a href="index.html">返回服务主页</a>
+    </section>
+
+    <section class="calculator">
+      <label>
+        <span>服务类型</span>
+        <select id="service">
+          <option value="figure">单图诊断与优化</option>
+          <option value="standard" selected>标准统计分析</option>
+          <option value="complex">复杂分析套餐</option>
+          <option value="review">系统综述数据整理</option>
+          <option value="tutoring">一对一科研工具辅导</option>
+        </select>
+      </label>
+
+      <label>
+        <span>复杂度：<strong id="complexityLabel">中等</strong></span>
+        <input id="complexity" type="range" min="1" max="5" value="3">
+      </label>
+
+      <div class="option-grid">
+        <label class="check"><input id="cleaning" type="checkbox"> 需要数据清洗</label>
+        <label class="check"><input id="urgent" type="checkbox"> 需要加急</label>
+        <label class="check"><input id="report" type="checkbox" checked> 需要结果说明</label>
+        <label class="check"><input id="slides" type="checkbox"> 需要汇报版摘要</label>
+      </div>
+
+      <label>
+        <span>额外修改轮数</span>
+        <input id="extraRounds" type="number" min="0" max="5" value="0">
+      </label>
+
+      <button id="calculate" type="button">计算参考报价</button>
+
+      <div class="result" aria-live="polite">
+        <p>参考报价</p>
+        <strong id="price">¥1,000～¥3,000</strong>
+        <small id="summary">等待计算</small>
+      </div>
+
+      <p class="notice">本页仅为参考估算。提交数据前请确认你拥有合法使用和共享权限；不提供数据编造、论文代写、作者身份交易或录用承诺。</p>
+    </section>
+  </main>
+
+  <script src="quote.js"></script>
+</body>
+</html>
